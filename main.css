@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {text-decoration: none !important;}
+
+@font-face {
+    font-family: 'Prompt-Bold';
+    src: url('fonts/Prompt-Bold.woff2');
+}
+@font-face {
+    font-family: 'Prompt-Medium';
+    src: url('fonts/Prompt-Medium.woff2');
+}
+
+/* font */
+
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* navbar */
+header {
+    width: 100%;
+}
+
+.img-fluid {
+    width: 100%;
+    position: relative;
+    display: none;
+}
+.img-fluid img {
+    width: 100%;
+    height: auto;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: larger;
+    padding: 0 0.25rem;
+}
+
+.navbar {
+    font-family: "Prompt-Bold";
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 15px; /*top-buttom 0.5rem, left-right 15px*/
+}
+
+.topnav2 {
+    display: flex;
+    align-items: center;
+}
+.topnav2 ul{
+    list-style: none;
+    display: flex;
+}
+.topnav2 li{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 1vh;
+}
+.topnav2 li a{
+    color: #000;
+    font-size: 1.125rem;
+    font-weight: bolder; 
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+}
+.topnav2 li img{
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+}
+
+
+.main-navbar {
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.main-navbar ul{
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    box-shadow: 1rem rgba(0, 0, 0, 0.2), 1rem rgba(0, 0, 0, 0.2);
+}
+.main-navbar li{
+    display: flex;
+    align-items: center;
+    border-left: #fff solid 1px;
+}
+.main-navbar li:last-child{
+    border-right: #fff solid 1px;
+}
+.main-navbar li:hover{
+    background-color: #000;
+}
+.main-navbar li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1.125rem;
+    padding: 1.5625rem 1.6875rem 1.3125rem;
+}
+.main-navbar li a img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+}
+
+.main-navbar .red-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 73px;
+    box-shadow: 1rem rgba(0, 0, 0, 0.2), 1rem rgba(0, 0, 0, 0.2);
+}
+.red-container {
+    background-color: #e4002b;
+    height: 65px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+/* footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Prompt-Medium';
+}
+footer h4{
+    font-size: 18px;
+    color: #e4002b;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-self: center;
+    padding-bottom: 5vh;
+}
+
+.header-toggle {
+    padding-top: 1rem;
+}
+
+.about-content {
+    display: block;
+}
+
+footer .about-content a{
+    font-weight: 400;
+    color: #000;
+    text-wrap: wrap;
+}
+
+.contact-app {
+    display: flex;
+}
+
+.contact-app img{
+    width: 30px;
+    height: 30px;
+    margin: 0.5rem 0.25rem;
+}
+
+.footer-copyright {
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.footer-copyright .copyright-link a,
+.footer-copyright .copyright-text{
+    font-size: .8125rem;
+    color: #000;
+}
+.col-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.copyright-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px; /* ระยะห่างระหว่างลิงค์และตัวเลือกการแยกแต่ง */
+}
+.copyright-text {
+    display: flex;
+    justify-content: center; /* จัดให้ข้อความตรงกลางแนวนอน */
+}
+
+.img-footer {
+    display: grid;
+    place-self: center;
+    margin-top: 1rem;
+    height: 54px;
+    width: 272px; 
+    background-image: url('logo/Self_Pickup_Stripe.png');
+    background-size: 100% 100%; /* ให้รูปภาพเต็มพื้นที่ของ div */
+}
+
+/* content */
+.slideshow {
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+}
+/* slide */
+.slide {
+    display: none;
+}
+.slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.prev, .next {
+    place-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -35px;
+    padding: 1.25rem;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 5vh;
+    transition: 0.6s ease;
+    border-radius: 0 10px 10px 0;
+    user-select: none;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+}
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    padding: 0.111rem;
+    width: 45px;
+    margin: 0 2px;
+    background-color: #8e8e8e;
+    border-radius: 5%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #FFF;
+}
+
+.row-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.row-content .image-container {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+}
+
+.box-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.box-a img{
+    width: 32.5vw;
+    height: 32.5vw;
+}
+
+.text-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 46vh;
+    height: 80%;
+    font-family: "Prompt-Bold";
+}
+.text-box h3{color: #fff;}
+.text-box a.order-button:hover{
+    background-color: #e4002b;
+}
+
+.text-box h3, .order-button {
+    font-size: 1.375rem;
+}
+
+.order-button {
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: bolder;
+    padding: .3125rem 2.5rem;
+    border-radius: 2px;
+}
+
+/* Breakpoints */
+
+@media screen and (min-width: 1200px) {
+    .navbar {
+        width: 1200px;
+    }
+
+    .about-us {
+        width: 1200px;
+    }
+}
+
+/* เพิ่มส่วนนี้ใน CSS เพื่อให้ toggle แสดงผลเสมอ */
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+    footer .about-content ul,
+    footer .about-content .contact-app {
+        display: block !important;
+    }
+
+    .navbar {
+        width: 960px;
+    }
+
+    .top-navbar {
+        padding: 0.5rem;
+    }
+
+    .about-us {
+        width: 960px;
+    }
+}
+/* mid */
+/* Tablet style */
+@media screen and (max-width: 992px) {
+    /* root class*/
+    .header-toggle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        cursor: pointer;
+    }
+    /* root class*/
+    .red-arrow {
+        content: url('icon/red\ arrow.png');
+        height: 20px;
+        width: 20px;
+        transition: transform 0.05s ease;
+    }
+    .rotated {
+        transform: rotate(180deg);
+    }
+
+    .navbar {
+        width: 720px;
+    }
+    
+    .topnav1 a img{
+        content: url('/logo/logo-mob.png');
+        width: 56px;
+        height: 56px;
+    }
+
+    .topnav2 {
+        padding-right: 50px;
+    }
+
+    .topnav2 li img{
+        display: none;
+    }
+
+    .main-navbar li a{
+        padding: .8125rem 4rem;
+        font-size: 0.75rem;
+    }
+    
+    .main-navbar .red-container {
+        height: 50px;
+    }
+
+    .text-box h3, .order-button {
+        font-size: 1rem;
+    }
+    
+    .about-us {
+        flex-direction: column;
+        width: 720px;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .about-content .toggle-header {
+        width: 94%;
+    }
+    .about-content ul {
+        width: 70%;
+    }
+
+
+    footer .about-content ul,
+    footer .about-content .contact-app {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navbar {
+        width: 100%;
+    }
+
+    .top-navbar {
+        margin: 10px 0;
+    }
+
+    .main-navbar ul {
+        justify-content: center;
+    }
+
+    .main-navbar li {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .main-navbar li a {
+        padding: .8125rem;
+    }
+
+    .about-us {
+        width: 100%;
+    }
+
+    .about-content ul {
+        width: 90%;
+    }
+
+    .header-toggle {
+        width: 100%;
+    }
+
+    .contact-app {
+        align-self: baseline;
+    }
+}
+/* Mobile style */
+@media screen and (max-width: 768px){
+    .navbar {
+        width: 540px;
+    }
+
+    .top-navbar {
+        padding: 0;
+    }
+
+    .topnav2 {
+        padding-right: 0;
+    }
+    .topnav2 li a{
+        font-size: 0.875rem;
+    }
+    .topnav2 li img{
+        display: block;
+    }
+
+    .main-navbar li {
+        height: 48px;
+    }
+
+    .main-navbar li a {
+        width: 180px;
+    }
+
+    .main-navbar .red-container {
+        height: 48px;
+    }
+
+    .row-content {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    
+    .box-a picture,
+    .box-a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-us {
+        width: 540px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .img-fluid {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .dot {
+        width: 25px;
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .navbar {
+        position: relative;
+        min-width: 270px;
+        width: auto;
+        max-width: 540px;
+    }
+
+    .main-navbar li {
+        flex: 1;
+        height: 48px;
+    }
+
+    .main-navbar li a {
+        width: auto;
+        padding: 0;
+    }
+
+    .dot {
+        padding: 0.1rem;
+        width: 15px;
+    }
+
+    .about-us {
+        min-width: 250px;
+        width: auto;
+        max-width: 540px;
+    }
+}
