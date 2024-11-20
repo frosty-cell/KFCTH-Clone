@@ -284,63 +284,59 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function manageSlides() {
-    let slideIndex = 1;
-    let slideInterval;
+let slideIndex = 1;
+let slideInterval;
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Bootstrap default = 5000
-    function startSlideInterval() {
-        slideInterval = setInterval(function () {
-            plusSlides(1);
-        }, 5000);
-    }
-
-    function stopSlideInterval() {
-        clearInterval(slideInterval);
-    }
-
-    function showSlides(n) {
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName("dot");
-
-        if (n > slides.length) {
-            slideIndex = 1
-        };
-        if (n < 1) {
-            slideIndex = slides.length
-        };
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none"
-        }
-
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        // Access img index 0
-        slides[slideIndex - 1].style.display = 'block';
-        dots[slideIndex - 1].className += " active";
-    }
-
-    showSlides();
-    startSlideInterval();
-
-    let slideshowContainer = document.querySelector('.slideshow')
-
-    slideshowContainer.addEventListener('mouseover', function () {
-        stopSlideInterval();
-    });
-
-    slideshowContainer.addEventListener('mouseout', function () {
-        startSlideInterval();
-    });
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
-// เรียกใช้ฟังก์ชัน
-manageSlides();
+
+// Bootstrap default = 5000
+function startSlideInterval() {
+    slideInterval = setInterval(function () {
+        plusSlides(1);
+    }, 5000);
+}
+
+function stopSlideInterval() {
+    clearInterval(slideInterval);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {
+        slideIndex = 1
+    };
+    if (n < 1) {
+        slideIndex = slides.length
+    };
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    // Access img index 0
+    slides[slideIndex - 1].style.display = 'block';
+    dots[slideIndex - 1].className += " active";
+}
+
+showSlides();
+startSlideInterval();
+
+let slideshowContainer = document.querySelector('.slideshow')
+
+slideshowContainer.addEventListener('mouseover', function () {
+    stopSlideInterval();
+});
+
+slideshowContainer.addEventListener('mouseout', function () {
+    startSlideInterval();
+});
 
 
 document.addEventListener("DOMContentLoaded", function() {
